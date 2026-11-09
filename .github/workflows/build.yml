@@ -34,6 +34,7 @@ jobs:
     - name: Install Buildozer
       run: |
         pip install --upgrade buildozer cython
+        pip install sh==1.14.3
         pip install python-for-android==2024.1.21
 
     - name: Build with Buildozer
