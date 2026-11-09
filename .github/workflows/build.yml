@@ -22,9 +22,9 @@ jobs:
         sudo apt-get install -y python3-pip build-essential git python3 python3-dev libffi-dev libssl-dev zlib1g-dev
 
     - name: Install Buildozer
-        run: |
-  pip install --upgrade buildozer cython
-  pip install python-for-android==2024.1.21
+      run: |
+        pip install --upgrade buildozer cython
+        pip install python-for-android==2024.1.21
 
     - name: Build with Buildozer
       run: |
