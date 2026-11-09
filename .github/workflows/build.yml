@@ -19,23 +19,11 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-pip build-essential git python3 python3-dev libffi-dev libssl-dev zlib1g-dev unzip
-
-    - name: Download Android SDK manually
-      run: |
-        mkdir -p ~/.buildozer/android/platform/
-        cd ~/.buildozer/android/platform/
-        wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O sdk.zip
-        unzip sdk.zip
-        mv cmdline-tools android-sdk
-        mkdir -p android-sdk/cmdline-tools
-        mv android-sdk/bin android-sdk/cmdline-tools/latest 2>/dev/null || true
+        sudo apt-get install -y python3-pip build-essential git python3 python3-dev libffi-dev libssl-dev zlib1g-dev
 
     - name: Install Buildozer
       run: |
         pip install --upgrade buildozer cython
-        pip install sh==1.14.3
-        pip install python-for-android==2024.1.21
 
     - name: Build with Buildozer
       run: |
