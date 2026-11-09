@@ -19,7 +19,14 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-pip build-essential git python3 python3-dev libffi-dev libssl-dev zlib1g-dev
+        sudo apt-get install -y python3-pip build-essential git python3 python3-dev libffi-dev libssl-dev zlib1g-dev unzip
+
+    - name: Pre-accept Android SDK licenses
+      run: |
+        mkdir -p $HOME/.buildozer/android/platform/android-sdk/licenses
+        echo -e "\n8933bad161af4b6a5b573652ffc7aaf3aee85a47" > $HOME/.buildozer/android/platform/android-sdk/licenses/android-sdk-license
+        echo -e "\nd56f5187479451eabf01fb78af6dfcb131b33910" > $HOME/.buildozer/android/platform/android-sdk/licenses/android-sdk-preview-license
+        echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > $HOME/.buildozer/android/platform/android-sdk/licenses/google-tv-preview-license
 
     - name: Install Buildozer
       run: |
