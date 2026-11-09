@@ -5,7 +5,7 @@ package.domain = org.test
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,wav
 version = 1.0
-requirements = python3==3.13.9,hostpython3==3.13.9,kivy==2.3.1
+requirements = python3==3.13.9,hostpython3==3.13.9,kivy==2.3.1,sh==1.14.3
 orientation = landscape
 fullscreen = 1
 android.permissions = INTERNET
